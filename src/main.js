@@ -4,7 +4,8 @@ import VuePivottable from 'vue-pivottable'
 import 'vue-pivottable/dist/vue-pivottable.css'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
- 
+import { Pivot } from 'vue-pivot-table-plus'
+Vue.use(Pivot)
 Vue.use(VueAxios, axios)
 Vue.use(VuePivottable)
 
