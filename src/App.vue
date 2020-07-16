@@ -35,7 +35,7 @@ export default {
     }
   },
   mounted(){
-    axios.request({url: "http://app.relion365.com/api/computers", method:"get"} ).then((response)=>{ 
+    axios.request({url: "http://app.relion365.com/api/computers/", method:"get"} ).then((response)=>{ 
       var data = response.data
       var output = []
       //var secout = []
