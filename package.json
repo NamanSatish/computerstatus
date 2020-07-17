@@ -7,12 +7,21 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "-": "0.0.1",
     "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
+    "bootstrap-vue": "^2.15.0",
     "core-js": "^3.6.5",
+    "css-loader": "^3.6.0",
+    "s": "^1.0.0",
     "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
+    "vue-good-table": "^2.19.5",
     "vue-pivot-table-plus": "^0.5.4",
-    "vue-pivottable": "^0.3.64"
+    "vue-pivottable": "^0.3.64",
+    "vue-style-loader": "^4.1.2",
+    "vue-tables-2": "^2.0.31",
+    "vuebars": "^0.1.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
