@@ -28,7 +28,13 @@
     </b-progress>
     </span>
     <span v-if="props.column.field == 'atera0'">
-      test
+      <span v-if="props.row.ateraArray.filter(x => x==0).length >0" style="font-weight: bold; color: green;">{{props.row.ateraArray.filter(x => x==0).length}}</span> 
+    </span>
+    <span v-if="props.column.field == 'atera1'">
+      <span v-if="props.row.ateraArray.filter(x => x==1).length >0" style="font-weight: bold; color: orange;">{{props.row.ateraArray.filter(x => x==1).length}}</span> 
+    </span>
+        <span v-if="props.column.field == 'atera2'">
+      <span v-if="props.row.ateraArray.filter(x => x==2).length >0" style="font-weight: bold; color: red;">{{props.row.ateraArray.filter(x => x==2).length}}</span> 
     </span>
     <span v-else>
       {{props.formattedRow[props.column.field]}}
@@ -103,21 +109,37 @@ export default {
           var readable = new Date(data[i].created_at)
           readable = readable.toLocaleDateString()
           temp.push( data[i].id, readable, data[i].computer, data[i].atera)
-          var sectemp = {id:data[i].id,time:readable,computer:data[i].computer,atera:data[i].atera,ateraArray:[]}
+          var sectemp = {id:data[i].id,time:readable,computer:data[i].computer,atera:data[i].atera,ateraArray:[],ateraDateArray:[]}
           this.tableData.push(sectemp)
           output.push(temp);
           
       }
-      var fixedTableData = [];
+      var ref = new Date();
+      var currentmonth = ref.getMonth()+1;
+      var currentday = ref.getDate();
       for(var i = 0; i< this.tableData.length; i++){
         this.tableData[i].ateraArray.push(this.tableData[i].atera)
+        var reportdate = new Date(this.tableData[i].time)
+        console.log(reportdate)
+        if(currentmonth == reportdate.getMonth()+1 && currentday - reportdate.getDate() < 6){
+        this.tableData[i].ateraDateArray.push({date:this.tableData[i].time, atera:this.tableData[i].atera})
+        }
         for(var n = 0; n<this.tableData.length;n++){
           if(this.tableData[i].computer == this.tableData[n].computer && i!=n){
             //this.tableData[i].atera +=this.tableData[n].atera
+           var reportdaten = new Date(this.tableData[n].time)
+            if(currentmonth == reportdaten.getMonth()+1 && currentday - reportdaten.getDate() < 6){
+            this.tableData[i].ateraDateArray.push({date:this.tableData[n].time, atera:this.tableData[n].atera})
+            }
             this.tableData[i].ateraArray.push(this.tableData[n].atera)
             this.tableData.splice(n, 1)
           }
       }
+
+
+
+
+
       }
       output.forEach(element => {
         this.pivotData.push(element);
