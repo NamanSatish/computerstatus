@@ -1,7 +1,7 @@
 <template>
-<div id="app">
+
     
-    <vue-pivottable
+    <!-- <vue-pivottable
         :data="pivotData"
         aggregatorName='Count'
         rendererName='Table Heatmap'
@@ -9,7 +9,7 @@
         :cols="['atera']"
         :vals="['atera']"
     >
-    </vue-pivottable>
+    </vue-pivottable> -->
 
 <vue-good-table
   v-if="!this.isDataLoading"
@@ -18,13 +18,13 @@
   <template slot="table-row" slot-scope="props">
     <span v-if="props.column.field == 'health'">
     <b-progress :max=70 class="mb-3">
-      <b-progress-bar variant="primary" :value=10></b-progress-bar>
-      <b-progress-bar variant="success" :value=10></b-progress-bar>
-      <b-progress-bar variant="info" :value=10></b-progress-bar>
-      <b-progress-bar variant="primary" :value=10></b-progress-bar>
-      <b-progress-bar variant="success" :value=10></b-progress-bar>
-      <b-progress-bar variant="info" :value=10></b-progress-bar>
-      <b-progress-bar variant="primary" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.ateraColors[0]]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.ateraColors[1]]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.ateraColors[2]]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.ateraColors[3]]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.ateraColors[4]]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.ateraColors[5]]" :value=10></b-progress-bar>
+      <b-progress-bar  striped animated :variant="progressColors[props.row.ateraColors[6]]" :value=10></b-progress-bar>
     </b-progress>
     </span>
     <span v-if="props.column.field == 'atera0'">
@@ -45,7 +45,7 @@
   <!-- <v-client-table v-if="!this.isDataLoading" :data="tableData" :columns="columns" :options="options"/> -->
 
 
-  </div>
+
 </template>
 <script>
 import { VuePivottable, VuePivottableUi } from 'vue-pivottable'
@@ -71,6 +71,7 @@ export default {
       columns: ['computer', 'atera'],
       options:{},
       isDataLoading:true,
+      progressColors:["success","warning","danger","danger","dark","info"],
       vuecolumns: [
         {
           label: 'Computer',
@@ -109,7 +110,7 @@ export default {
           var readable = new Date(data[i].created_at)
           readable = readable.toLocaleDateString()
           temp.push( data[i].id, readable, data[i].computer, data[i].atera)
-          var sectemp = {id:data[i].id,time:readable,computer:data[i].computer,atera:data[i].atera,ateraArray:[],ateraDateArray:[]}
+          var sectemp = {id:data[i].id,time:readable,computer:data[i].computer,atera:data[i].atera,ateraArray:[],ateraDateArray:[],ateraColors:[4,4,4,4,4,4,5]}
           this.tableData.push(sectemp)
           output.push(temp);
           
@@ -121,14 +122,17 @@ export default {
         this.tableData[i].ateraArray.push(this.tableData[i].atera)
         var reportdate = new Date(this.tableData[i].time)
         console.log(reportdate)
-        if(currentmonth == reportdate.getMonth()+1 && currentday - reportdate.getDate() < 6){
+        if(currentmonth == reportdate.getMonth()+1 && currentday - reportdate.getDate() < 6 && currentday - reportdate.getDate() > -1){
+          this.tableData[i].ateraColors[(6- (currentday - reportdate.getDate()))] = this.tableData[i].atera
         this.tableData[i].ateraDateArray.push({date:this.tableData[i].time, atera:this.tableData[i].atera})
         }
         for(var n = 0; n<this.tableData.length;n++){
           if(this.tableData[i].computer == this.tableData[n].computer && i!=n){
             //this.tableData[i].atera +=this.tableData[n].atera
            var reportdaten = new Date(this.tableData[n].time)
-            if(currentmonth == reportdaten.getMonth()+1 && currentday - reportdaten.getDate() < 6){
+            if(currentmonth == reportdaten.getMonth()+1 && currentday - reportdaten.getDate() < 6 && currentday - reportdaten.getDate() > -1){
+              console.log(6 - (currentday - reportdaten.getDate()))
+              this.tableData[i].ateraColors[(6 - (currentday - reportdaten.getDate()))] = this.tableData[n].atera
             this.tableData[i].ateraDateArray.push({date:this.tableData[n].time, atera:this.tableData[n].atera})
             }
             this.tableData[i].ateraArray.push(this.tableData[n].atera)
