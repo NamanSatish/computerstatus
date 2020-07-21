@@ -18,57 +18,57 @@
   <template slot="table-row" slot-scope="props">
     <span v-if="props.column.field == 'aterahealth'">
     <b-progress :max=70 class="mb-2">
-      <b-progress-bar :variant="progressColors[props.row.ateraColors[0]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.ateraColors[1]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.ateraColors[2]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.ateraColors[3]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.ateraColors[4]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.ateraColors[5]]" :value=10></b-progress-bar>
-      <b-progress-bar  striped animated :variant="progressColors[props.row.ateraColors[6]]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.ateraColors[0]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.ateraColors[1]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.ateraColors[2]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.ateraColors[3]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.ateraColors[4]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.ateraColors[5]+1]" :value=10></b-progress-bar>
+      <b-progress-bar  striped animated :variant="progressColors[props.row.ateraColors[6]+1]" :value=10></b-progress-bar>
     </b-progress>
     </span>
     <span v-if="props.column.field == 'patchhealth'">
     <b-progress :max=70 class="mb-2">
-      <b-progress-bar :variant="progressColors[props.row.patchColors[0]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.patchColors[1]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.patchColors[2]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.patchColors[3]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.patchColors[4]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.patchColors[5]]" :value=10></b-progress-bar>
-      <b-progress-bar  striped animated :variant="progressColors[props.row.patchColors[6]]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.patchColors[0]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.patchColors[1]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.patchColors[2]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.patchColors[3]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.patchColors[4]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.patchColors[5]+1]" :value=10></b-progress-bar>
+      <b-progress-bar  striped animated :variant="progressColors[props.row.patchColors[6]+1]" :value=10></b-progress-bar>
     </b-progress>
     </span>
     <span v-if="props.column.field == 'sophoshealth'">
     <b-progress :max=70 class="mb-2">
-      <b-progress-bar :variant="progressColors[props.row.sophosColors[0]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.sophosColors[1]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.sophosColors[2]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.sophosColors[3]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.sophosColors[4]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.sophosColors[5]]" :value=10></b-progress-bar>
-      <b-progress-bar  striped animated :variant="progressColors[props.row.sophosColors[6]]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.sophosColors[0]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.sophosColors[1]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.sophosColors[2]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.sophosColors[3]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.sophosColors[4]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.sophosColors[5]+1]" :value=10></b-progress-bar>
+      <b-progress-bar  striped animated :variant="progressColors[props.row.sophosColors[6]+1]" :value=10></b-progress-bar>
     </b-progress>
     </span>
     <span v-if="props.column.field == 'screenconnecthealth'">
     <b-progress :max=70 class="mb-2">
-      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[0]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[1]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[2]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[3]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[4]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[5]]" :value=10></b-progress-bar>
-      <b-progress-bar  striped animated :variant="progressColors[props.row.screenconnectColors[6]]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[0]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[1]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[2]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[3]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[4]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[5]+1]" :value=10></b-progress-bar>
+      <b-progress-bar  striped animated :variant="progressColors[props.row.screenconnectColors[6]+1]" :value=10></b-progress-bar>
     </b-progress>
     </span>
     <span v-if="props.column.field == 'winverhealth'">
     <b-progress :max=70 class="mb-2">
-      <b-progress-bar :variant="progressColors[props.row.winverColors[0]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.winverColors[1]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.winverColors[2]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.winverColors[3]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.winverColors[4]]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.winverColors[5]]" :value=10></b-progress-bar>
-      <b-progress-bar  striped animated :variant="progressColors[props.row.winverColors[6]]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.winverColors[0]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.winverColors[1]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.winverColors[2]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.winverColors[3]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.winverColors[4]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="progressColors[props.row.winverColors[5]+1]" :value=10></b-progress-bar>
+      <b-progress-bar  striped animated :variant="progressColors[props.row.winverColors[6]+1]" :value=10></b-progress-bar>
     </b-progress>
     </span>
     <span v-if="props.column.field == 'atera0'">
@@ -155,7 +155,7 @@ export default {
       columns: ['computer', 'atera'],
       options:{},
       isDataLoading:true,
-      progressColors:["success","warning","danger","danger","dark","info"],
+      progressColors:["danger","warning","success","danger","danger","dark","info"], //-1 is failure, 0 is not detected, 1 is detected
       vuecolumns: [
         {
           label: 'Computer',
