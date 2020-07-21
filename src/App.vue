@@ -18,57 +18,57 @@
   <template slot="table-row" slot-scope="props">
     <span v-if="props.column.field == 'aterahealth'">
     <b-progress :max=70 class="mb-2">
-      <b-progress-bar :variant="progressColors[props.row.ateraColors[0]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.ateraColors[1]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.ateraColors[2]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.ateraColors[3]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.ateraColors[4]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.ateraColors[5]+1]" :value=10></b-progress-bar>
-      <b-progress-bar  striped animated :variant="progressColors[props.row.ateraColors[6]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.ateraColors[0])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.ateraColors[1])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.ateraColors[2])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.ateraColors[3])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.ateraColors[4])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.ateraColors[5])" :value=10></b-progress-bar>
+      <b-progress-bar  striped animated :variant="returnProgressColor(props.row.ateraColors[6])" :value=10></b-progress-bar>
     </b-progress>
     </span>
     <span v-if="props.column.field == 'patchhealth'">
     <b-progress :max=70 class="mb-2">
-      <b-progress-bar :variant="progressColors[props.row.patchColors[0]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.patchColors[1]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.patchColors[2]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.patchColors[3]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.patchColors[4]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.patchColors[5]+1]" :value=10></b-progress-bar>
-      <b-progress-bar  striped animated :variant="progressColors[props.row.patchColors[6]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnPatchColor(props.row.patchColors[0])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnPatchColor(props.row.patchColors[1])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnPatchColor(props.row.patchColors[2])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnPatchColor(props.row.patchColors[3])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnPatchColor(props.row.patchColors[4])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnPatchColor(props.row.patchColors[5])" :value=10></b-progress-bar>
+      <b-progress-bar  striped animated :variant="returnPatchColor(props.row.patchColors[6])" :value=10></b-progress-bar>
     </b-progress>
     </span>
     <span v-if="props.column.field == 'sophoshealth'">
     <b-progress :max=70 class="mb-2">
-      <b-progress-bar :variant="progressColors[props.row.sophosColors[0]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.sophosColors[1]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.sophosColors[2]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.sophosColors[3]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.sophosColors[4]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.sophosColors[5]+1]" :value=10></b-progress-bar>
-      <b-progress-bar  striped animated :variant="progressColors[props.row.sophosColors[6]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.sophosColors[0])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.sophosColors[1])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.sophosColors[2])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.sophosColors[3])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.sophosColors[4])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.sophosColors[5])" :value=10></b-progress-bar>
+      <b-progress-bar  striped animated :variant="returnProgressColor(props.row.sophosColors[6])" :value=10></b-progress-bar>
     </b-progress>
     </span>
     <span v-if="props.column.field == 'screenconnecthealth'">
     <b-progress :max=70 class="mb-2">
-      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[0]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[1]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[2]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[3]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[4]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.screenconnectColors[5]+1]" :value=10></b-progress-bar>
-      <b-progress-bar  striped animated :variant="progressColors[props.row.screenconnectColors[6]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.screenconnectColors[0])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.screenconnectColors[1])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.screenconnectColors[2])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.screenconnectColors[3])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.screenconnectColors[4])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.screenconnectColors[5])" :value=10></b-progress-bar>
+      <b-progress-bar  striped animated :variant="returnProgressColor(props.row.screenconnectColors[6])" :value=10></b-progress-bar>
     </b-progress>
     </span>
     <span v-if="props.column.field == 'winverhealth'">
     <b-progress :max=70 class="mb-2">
-      <b-progress-bar :variant="progressColors[props.row.winverColors[0]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.winverColors[1]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.winverColors[2]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.winverColors[3]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.winverColors[4]+1]" :value=10></b-progress-bar>
-      <b-progress-bar :variant="progressColors[props.row.winverColors[5]+1]" :value=10></b-progress-bar>
-      <b-progress-bar  striped animated :variant="progressColors[props.row.winverColors[6]+1]" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.winverColors[0])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.winverColors[1])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.winverColors[2])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.winverColors[3])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.winverColors[4])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.winverColors[5])" :value=10></b-progress-bar>
+      <b-progress-bar  striped animated :variant="returnProgressColor(props.row.winverColors[6])" :value=10></b-progress-bar>
     </b-progress>
     </span>
     <span v-if="props.column.field == 'atera0'">
@@ -156,6 +156,7 @@ export default {
       options:{},
       isDataLoading:true,
       progressColors:["danger","warning","success","danger","danger","dark","info"], //-1 is failure, 0 is not detected, 1 is detected
+      patchprogressColors:["danger","success","warning","danger"],
       vuecolumns: [
         {
           label: 'Computer',
@@ -242,55 +243,98 @@ export default {
         {
           label: 'Atera Health',
           field: 'aterahealth',
+          width: '150px',
           
         },
         {
           label: 'Patch Health',
           field: 'patchhealth',
+          width: '150px',
           
         },
         {
           label: 'Sophos Health',
           field: 'sophoshealth',
+          width: '150px',
           
         },
         {
           label: 'ScreenConnect',
           field: 'screenconnecthealth',
+          width: '150px',
           
         },
         {
           label: 'Winver Health',
           field: 'winverhealth',
+          width: '150px',
+          
         },
       ],
     }
   },
+  methods:{
+    returnPatchColor(patch){
+      if(patch == -1){
+        return "danger"
+      }else if(patch ==-2){
+        return "dark"  
+      }else if(patch ==-3){
+        return "info"  
+      }else if(patch == 0){
+        return "success"
+      } else if(patch>0 && patch<4){
+        return "warning"
+      } else if(patch>=4){
+        return "danger"
+      }
+
+    },
+    returnProgressColor(value){
+      if(value == -1){
+        return "danger"
+      }else if(value == 0){
+        return "warning"  
+      }else if(value == 1){
+        return "success"  
+      }else if(value == 4){
+        return "dark"
+      } else if(value == 5){
+        return "info"
+      } else {
+        return "primary"
+      }
+    }
+  },
+    
+
   mounted(){
-    axios.request({url: "http://app.relion365.com/api/computers/", method:"get"} ).then((response)=>{ 
+    axios.request({url: "http://app.relion365.com/api/computers/", method:"get"} ).then((response)=>{  // API CALL
+      console.log("API DATA RECIEVED")
       var data = response.data
       var output = []
-      for(var i = 0; i< data.length ; i++){
+      for(var i = 0; i< data.length ; i++){  //Store all the data in a new format that has all the variables we want to use
           var temp = []
           var readable = new Date(data[i].created_at)
           readable = readable.toLocaleDateString()
           temp.push( data[i].id, readable, data[i].computer, data[i].atera)
-          var sectemp = {id:data[i].id,time:readable,computer:data[i].computer,atera:data[i].atera,ateraArray:[],ateraDateArray:[],ateraColors:[4,4,4,4,4,4,5],patch:data[i].patch,patchArray:[],patchDateArray:[],patchColors:[4,4,4,4,4,4,5],sophos:data[i].sophos,sophosArray:[],sophosDateArray:[],sophosColors:[4,4,4,4,4,4,5],screenconnect:data[i].screenconnect,screenconnectArray:[],screenconnectDateArray:[],screenconnectColors:[4,4,4,4,4,4,5],winver:data[i].winver,winverArray:[],winverDateArray:[],winverColors:[4,4,4,4,4,4,5]}
+          var sectemp = {id:data[i].id,time:readable,computer:data[i].computer,atera:data[i].atera,ateraArray:[],ateraDateArray:[],ateraColors:[4,4,4,4,4,4,5],patch:data[i].patch,patchArray:[],patchDateArray:[],patchColors:[-2,-2,-2,-2,-2,-2,-3],sophos:data[i].sophos,sophosArray:[],sophosDateArray:[],sophosColors:[4,4,4,4,4,4,5],screenconnect:data[i].screenconnect,screenconnectArray:[],screenconnectDateArray:[],screenconnectColors:[4,4,4,4,4,4,5],winver:data[i].winver,winverArray:[],winverDateArray:[],winverColors:[4,4,4,4,4,4,5]}
           this.tableData.push(sectemp)
           output.push(temp);
           
       }
-      var ref = new Date();
-      var currentmonth = ref.getMonth()+1;
-      var currentday = ref.getDate();
-      for(var i = 0; i< this.tableData.length; i++){
-        this.tableData[i].ateraArray.push(this.tableData[i].atera)
+
+      var ref = new Date(); // Create a referal date that we use to calculate 7 days ago
+      var currentmonth = ref.getMonth()+1; //Get the current month (Need to add one bc it starts at 0)
+      var currentday = ref.getDate(); //Get the current day (Eg. 21)
+      for(var i = 0; i< this.tableData.length; i++){ //Our first Loop
+        this.tableData[i].ateraArray.push(this.tableData[i].atera) // Push the values we have into an array
         this.tableData[i].patchArray.push(this.tableData[i].patch)
         this.tableData[i].sophosArray.push(this.tableData[i].sophos)
         this.tableData[i].screenconnectArray.push(this.tableData[i].screenconnect)
         this.tableData[i].winverArray.push(this.tableData[i].winver)
-        var reportdate = new Date(this.tableData[i].time)
-        if(currentmonth == reportdate.getMonth()+1 && currentday - reportdate.getDate() < 6 && currentday - reportdate.getDate() > -1){
+        var reportdate = new Date(this.tableData[i].time) //Get the date that a certain report was made
+        if(currentmonth == reportdate.getMonth()+1 && currentday - reportdate.getDate() < 6 && currentday - reportdate.getDate() > -1){ // If it is in the same month and less than 6 days ago, proceed
           this.tableData[i].ateraColors[(6- (currentday - reportdate.getDate()))] = this.tableData[i].atera
           this.tableData[i].ateraDateArray.push({date:this.tableData[i].time, atera:this.tableData[i].atera})
 
@@ -304,13 +348,13 @@ export default {
           this.tableData[i].screenconnectDateArray.push({date:this.tableData[i].time, screenconnect:this.tableData[i].screenconnect})
 
           this.tableData[i].winverColors[(6- (currentday - reportdate.getDate()))] = this.tableData[i].winver
-          this.tableData[i].winverDateArray.push({date:this.tableData[i].time, winver:this.tableData[i].winver})
+          this.tableData[i].winverDateArray.push({date:this.tableData[i].time, winver:this.tableData[i].winver}) // Set the index of your day to the value of the report - Read the array from left to right, as it would be displayed on the health bar
         }
-        for(var n = 0; n<this.tableData.length;n++){
-          if(this.tableData[i].computer == this.tableData[n].computer && i!=n){
+        for(var n = i; n<this.tableData.length ;n++){ //Our second loop to collect all of the reports of the same computer
+          if(this.tableData[i].computer == this.tableData[n].computer && i!=n){ // Loop and look for reports that share the same name, but not the same index (Prevent the loop from running on the main first object)
             //this.tableData[i].atera +=this.tableData[n].atera
-           var reportdaten = new Date(this.tableData[n].time)
-            if(currentmonth == reportdaten.getMonth()+1 && currentday - reportdaten.getDate() < 6 && currentday - reportdaten.getDate() > -1){
+           var reportdaten = new Date(this.tableData[n].time) // Create a new refferal date for each of the reports of the same computer
+            if(currentmonth == reportdaten.getMonth()+1 && currentday - reportdaten.getDate() < 6 && currentday - reportdaten.getDate() > -1){ //Proceed if they pass the correct date requirements
               this.tableData[i].ateraColors[(6 - (currentday - reportdaten.getDate()))] = this.tableData[n].atera
               this.tableData[i].ateraDateArray.push({date:this.tableData[n].time, atera:this.tableData[n].atera})
 
@@ -324,16 +368,16 @@ export default {
               this.tableData[i].screenconnectDateArray.push({date:this.tableData[n].time, screenconnect:this.tableData[n].screenconnect})
 
               this.tableData[i].winverColors[(6 - (currentday - reportdaten.getDate()))] = this.tableData[n].winver
-              this.tableData[i].winverDateArray.push({date:this.tableData[n].time, winver:this.tableData[n].winver})
+              this.tableData[i].winverDateArray.push({date:this.tableData[n].time, winver:this.tableData[n].winver}) // Same thing as before. We get the difference between today and the day it was taken, eg 1. We then subtract that from 6 to find where in the array it should be placed. In this case, 6-1 is 5, so place it in index 5, one spot away from the current day.
 
             }
             this.tableData[i].ateraArray.push(this.tableData[n].atera)
             this.tableData[i].patchArray.push(this.tableData[n].patch)
             this.tableData[i].sophosArray.push(this.tableData[n].sophos)
             this.tableData[i].screenconnectArray.push(this.tableData[n].screenconnect)
-            this.tableData[i].winverArray.push(this.tableData[n].winver)
+            this.tableData[i].winverArray.push(this.tableData[n].winver) //Pushing the data to the array for record keeping
 
-            this.tableData.splice(n, 1)
+            this.tableData.splice(n, 1) //Remove the extra report after we have extracted all the relavent info. This makes sure that it will not be displayed in the table
           }
       }
 
@@ -346,7 +390,7 @@ export default {
         this.pivotData.push(element);
       });
       console.log(this.tableData)
-      this.isDataLoading = false;
+      this.isDataLoading = false; // The table can now be allowed to load
     })
   }
 }
