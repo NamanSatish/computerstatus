@@ -83,8 +83,6 @@
 
 </template>
 <script>
-import { VuePivottable, VuePivottableUi } from 'vue-pivottable'
-import 'vue-pivottable/dist/vue-pivottable.css'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
@@ -95,19 +93,13 @@ import { VueGoodTable } from 'vue-good-table';
 export default {
   name: 'App',
   components: {
-    VuePivottableUi,
     VueGoodTable
   },
   data () {
     return {
-      pivotData: [['ID', 'time', 'computer', 'atera']],
-      dataheaders: ['ID', 'time', 'computer', 'atera'],
       tableData:[],
-      columns: ['computer', 'atera'],
       options:{},
       isDataLoading:true,
-      progressColors:["danger","warning","success","danger","danger","dark","info"], //-1 is failure, 0 is not detected, 1 is detected
-      patchprogressColors:["danger","success","warning","danger"],
       vuecolumns: [
         {
           label: 'Computer',
