@@ -1,16 +1,5 @@
 <template>
 
-    
-    <!-- <vue-pivottable
-        :data="pivotData"
-        aggregatorName='Count'
-        rendererName='Table Heatmap'
-        :rows="['computer']"
-        :cols="['atera']"
-        :vals="['atera']"
-    >
-    </vue-pivottable> -->
-
 <vue-good-table
   v-if="!this.isDataLoading"
       :columns="vuecolumns"
@@ -24,7 +13,7 @@
       <b-progress-bar :variant="returnProgressColor(props.row.ateraColors[3])" :value=10></b-progress-bar>
       <b-progress-bar :variant="returnProgressColor(props.row.ateraColors[4])" :value=10></b-progress-bar>
       <b-progress-bar :variant="returnProgressColor(props.row.ateraColors[5])" :value=10></b-progress-bar>
-      <b-progress-bar  striped animated :variant="returnProgressColor(props.row.ateraColors[6])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.ateraColors[6])" :value=10></b-progress-bar>
     </b-progress>
     </span>
     <span v-if="props.column.field == 'patchhealth'">
@@ -35,7 +24,7 @@
       <b-progress-bar :variant="returnPatchColor(props.row.patchColors[3])" :value=10></b-progress-bar>
       <b-progress-bar :variant="returnPatchColor(props.row.patchColors[4])" :value=10></b-progress-bar>
       <b-progress-bar :variant="returnPatchColor(props.row.patchColors[5])" :value=10></b-progress-bar>
-      <b-progress-bar  striped animated :variant="returnPatchColor(props.row.patchColors[6])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnPatchColor(props.row.patchColors[6])" :value=10></b-progress-bar>
     </b-progress>
     </span>
     <span v-if="props.column.field == 'sophoshealth'">
@@ -46,7 +35,7 @@
       <b-progress-bar :variant="returnProgressColor(props.row.sophosColors[3])" :value=10></b-progress-bar>
       <b-progress-bar :variant="returnProgressColor(props.row.sophosColors[4])" :value=10></b-progress-bar>
       <b-progress-bar :variant="returnProgressColor(props.row.sophosColors[5])" :value=10></b-progress-bar>
-      <b-progress-bar  striped animated :variant="returnProgressColor(props.row.sophosColors[6])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.sophosColors[6])" :value=10></b-progress-bar>
     </b-progress>
     </span>
     <span v-if="props.column.field == 'screenconnecthealth'">
@@ -57,7 +46,7 @@
       <b-progress-bar :variant="returnProgressColor(props.row.scColors[3])" :value=10></b-progress-bar>
       <b-progress-bar :variant="returnProgressColor(props.row.scColors[4])" :value=10></b-progress-bar>
       <b-progress-bar :variant="returnProgressColor(props.row.scColors[5])" :value=10></b-progress-bar>
-      <b-progress-bar  striped animated :variant="returnProgressColor(props.row.scColors[6])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.scColors[6])" :value=10></b-progress-bar>
     </b-progress>
     </span>
     <span v-if="props.column.field == 'winverhealth'">
@@ -68,7 +57,7 @@
       <b-progress-bar :variant="returnProgressColor(props.row.winverColors[3])" :value=10></b-progress-bar>
       <b-progress-bar :variant="returnProgressColor(props.row.winverColors[4])" :value=10></b-progress-bar>
       <b-progress-bar :variant="returnProgressColor(props.row.winverColors[5])" :value=10></b-progress-bar>
-      <b-progress-bar  striped animated :variant="returnProgressColor(props.row.winverColors[6])" :value=10></b-progress-bar>
+      <b-progress-bar :variant="returnProgressColor(props.row.winverColors[6])" :value=10></b-progress-bar>
     </b-progress>
     </span>
     <span v-else>
@@ -99,7 +88,7 @@ export default {
     return {
       tableData:[],
       options:{},
-      isDataLoading:true,
+      isDataLoading:false,
       vuecolumns: [
         {
           label: 'Computer',
@@ -140,12 +129,10 @@ export default {
   },
   methods:{
     returnPatchColor(patch){
-      if(patch == -1){
-        return "danger"
-      }else if(patch ==-2){
-        return "dark"  
-      }else if(patch ==-3){
-        return "info"  
+      if(patch == -2){
+        return "dark"
+      }else if(patch ==-1){
+        return "secondary"  
       }else if(patch == 0){
         return "success"
       } else if(patch>0 && patch<4){
@@ -156,16 +143,14 @@ export default {
 
     },
     returnProgressColor(value){
-      if(value == -1){
-        return "danger"
-      }else if(value == 0){
-        return "warning"  
+      if(value == 0){
+        return "success"
       }else if(value == 1){
-        return "success"  
-      }else if(value == 4){
-        return "dark"
-      } else if(value == 5){
-        return "info"
+        return "dark"  
+      }else if(value == 2){
+        return "danger"  
+      }else if(value == -1){
+        return "secondary"
       } else {
         return "primary"
       }
@@ -181,11 +166,11 @@ export default {
       var currentTime = new Date();
       for(var i = 0; i<this.tableData.length; i++){
 
-        this.tableData[i].ateraColors=[4,4,4,4,4,4,5]
-        this.tableData[i].patchColors=[-2,-2,-2,-2,-2,-2,-3];
-        this.tableData[i].sophosColors=[4,4,4,4,4,4,5];
-        this.tableData[i].scColors=[4,4,4,4,4,4,5];
-        this.tableData[i].winverColors=[4,4,4,4,4,4,5];
+        this.tableData[i].ateraColors=[-1,-1,-1,-1,-1,-1,-1]
+        this.tableData[i].patchColors=[-1,-1,-1,-1,-1,-1,-1];
+        this.tableData[i].sophosColors=[-1,-1,-1,-1,-1,-1,-1];
+        this.tableData[i].scColors=[-1,-1,-1,-1,-1,-1,-1];
+        this.tableData[i].winverColors=[-1,-1,-1,-1,-1,-1,-1];
         for(var n = 0; n<this.tableData[i].computer_healthchecks.length;n++){
           var reportdate = new Date(this.tableData[i].computer_healthchecks[n].created_at)
           if((currentTime.getMonth()+1 == reportdate.getMonth()+1) && (currentTime.getDate() - reportdate.getDate() < 6) && (currentTime.getDate() - reportdate.getDate() > -1)){
@@ -206,13 +191,4 @@ export default {
 }
 
 </script>
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+
