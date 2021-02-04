@@ -6,13 +6,12 @@ import VueAxios from 'vue-axios'
 
 
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-import VueGoodTablePlugin from 'vue-good-table';
+import VueQuagga from 'vue-quaggajs';
 
+// register component 'v-quagga'
+Vue.use(VueQuagga);
 // import the styles 
-import 'vue-good-table/dist/vue-good-table.css'
 
-
-Vue.use(VueGoodTablePlugin);
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
